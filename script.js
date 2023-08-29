@@ -12,9 +12,10 @@ function createGrid()
         for(let j=0;j<numberOfColumns;j++)
         {
             let cell=document.createElement("div");
-            cell.style.cssText='width: 45px;height:45px;outline:0.0001px white solid;background-color:white;display:inline-block;margin-top:-2px'
+            cell.style.cssText='background-color:white;flex-basis:45px';
             container.appendChild(cell);
             cell.addEventListener("click",changeColor);
+            cell.addEventListener("mouseDown",changeColor);
 
         }
     
@@ -29,6 +30,4 @@ function changeColor()
 }
 
 createGrid();
-
-
 

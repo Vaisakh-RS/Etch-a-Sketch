@@ -15,7 +15,11 @@ h1{
     width: 720px;
     height: 720px;
     margin:auto;
-    border: 10px  black solid;
+    border: 5px  black solid;
+    display: flex;
+    flex-wrap: wrap;
 
 }
+
+
 
