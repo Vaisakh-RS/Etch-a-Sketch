@@ -12,12 +12,13 @@ h1{
 
 .container{
     background-color: bisque;
-    width: 720px;
-    height: 720px;
+    width: 560px;
+    height: 560px;
     margin:auto;
-    border: 5px  black solid;
+    /*border: 1px  black solid;*/
     display: flex;
     flex-wrap: wrap;
+    box-shadow: 10px 10px 28px rgb(41, 39, 39) ;
 
 }
 

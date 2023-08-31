@@ -13,7 +13,8 @@ function createGrid()
         for(let j=0;j<numberOfRowsAndColumns;j++)
         {
             let cell=document.createElement("div");
-            cell.style.cssText='background-color:white;flex-basis:45px';
+            //flex basis is the width of each cell here
+            cell.style.cssText='background-color:white;flex-basis:35px';
             container.appendChild(cell);
             cell.addEventListener("mousedown",()=>{
                 isMouseDown=true;
@@ -37,11 +38,6 @@ function createGrid()
         }  
     }
 
-}
-
-function changeColor()
-{
-    
 }
 
 createGrid();
