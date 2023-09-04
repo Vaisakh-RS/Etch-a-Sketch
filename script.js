@@ -1,12 +1,18 @@
 let container=document.getElementsByClassName("container")[0];
+let colorPicker=document.getElementById("cpick");
 
-
+let pickedColor;
+colorPicker.addEventListener("change", (e)=>
+{
+    pickedColor= e.target.value;
+});
 
 function createGrid()
 {
     let isMouseDown = false;
     let timerId;
     let numberOfRowsAndColumns=16;
+
 
     for(let i=0;i<numberOfRowsAndColumns;i++)
     {
@@ -22,7 +28,7 @@ function createGrid()
 
                 timerId=setTimeout(()=>{
                     if(isMouseDown){
-                        cell.style.backgroundColor="red";
+                        cell.style.backgroundColor=pickedColor;
                     }
                 },0.01);
             });
@@ -34,15 +40,15 @@ function createGrid()
 
             cell.addEventListener("mouseover",()=>{
                 if(isMouseDown){
-                    cell.style.backgroundColor="red";
-                }});
+                    cell.style.backgroundColor=pickedColor;
+                }
+            });
         }  
     }
 
 }
 
-
-
+//reset button
 let cells=document.getElementsByClassName("cell");
 let resetButton=document.getElementById("reset");
 resetButton.addEventListener("click",()=>{
@@ -52,6 +58,7 @@ resetButton.addEventListener("click",()=>{
     }
        
 });
+
 
 createGrid();
 
