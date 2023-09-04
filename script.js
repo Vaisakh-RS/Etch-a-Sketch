@@ -3,26 +3,32 @@ let colorPicker=document.getElementById("cpick");
 let eraserButton=document.getElementById("eraser");
 
 let isEraserClicked=false;
+let isColorPicked=false;
 
 const defaultColor="#000000";
 window.addEventListener("load",onStartup);
 function onStartup()
 {
     pickedColor=defaultColor;
+    isColorPicked=true;
+    isEraserClicked=false;
 }
 
 let pickedColor;
 colorPicker.addEventListener("input", (e)=>
 {
     pickedColor= e.target.value;
+    isColorPicked=true;
+    isEraserClicked=false;
 });
 
 eraserButton.addEventListener("click",()=>{
-    isEraserClicked=true
+    isEraserClicked=true;
+    isColorPicked=false;
 });
 
 
-function createGrid()
+function main()
 {
     let isMouseDown = false;
     let timerId;
@@ -42,11 +48,11 @@ function createGrid()
                 isMouseDown=true;
 
                 timerId=setTimeout(()=>{
-                    if(isMouseDown){
+                    if(isMouseDown&&isColorPicked){
                         cell.style.backgroundColor=pickedColor;
                     }
-                    else{
-                        cell.style.backgroundColor=pickedColor;
+                    else if(isMouseDown){
+                        cell.style.backgroundColor="white";
                     }
                 },0.0001);
             });
@@ -57,8 +63,11 @@ function createGrid()
             });
 
             cell.addEventListener("mouseover",()=>{
-                if(isMouseDown){
+                if(isMouseDown&&isColorPicked){
                     cell.style.backgroundColor=pickedColor;
+                }
+                else if(isMouseDown){
+                    cell.style.backgroundColor="white";
                 }
             });
         }  
@@ -78,5 +87,5 @@ resetButton.addEventListener("click",()=>{
 });
 
 
-createGrid();
+main();
 
