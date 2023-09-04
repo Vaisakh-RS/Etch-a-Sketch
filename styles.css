@@ -7,16 +7,22 @@ h1{
     text-align: center;
     font-family: 'Luckiest Guy', cursive;
     font-size: 50px;
+    color: rgb(71, 71, 231);
 
+}
+
+.main{
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .container{
     background-color: bisque;
     width: 560px;
     height: 560px;
-    margin:auto;
     display: flex;
-    margin-left: 900px;
+    margin-left: 200px;
     margin-top: 100px;
     flex-wrap: wrap;
     box-shadow: 10px 10px 28px rgb(41, 39, 39) ;
@@ -26,20 +32,49 @@ h1{
 .menu{
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 20px;
     width: 200px;
-    margin-left:200px;
-    margin-bottom:100px
+    margin-left:400px;
+    font-family: 'Borel', cursive;
 }
 
 #cpick{
-    height: 50px;
-    width: 50px;
-    border: 500 black solid;
-    border-radius:1000px;
-    padding:10px;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    padding: 0;
+    cursor: pointer;
     
 }
 
+#cpick::-webkit-color-swatch{
+    border-radius: 50%;
+}
+#cpick::-moz-color-swatch{
+    border-radius: 50%;
+}
+
+#eraser,#reset{
+    padding: 5px;
+    font-size: 20px;
+    border-radius: 20px;
+    width: 150px;
+    cursor: pointer;
+    margin: 10px;
+    font-family: 'Borel', cursive;
+    text-align: center;
+    line-height: normal;
+
+}
+
+.buttons{
+    display: flex;
+    margin: 20px;
+    
+
+}
 
 
